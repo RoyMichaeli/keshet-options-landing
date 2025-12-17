@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { useForm } from "react-hook-form";
+import { useRouter } from "next/navigation";
+import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -14,6 +15,7 @@ import { leadFormSchema, type LeadFormData } from "@/lib/validations";
 
 export function LeadForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const router = useRouter();
   const { toast } = useToast();
 
   const {
@@ -51,12 +53,7 @@ export function LeadForm() {
       const result = await response.json();
 
       if (response.ok && result.success) {
-        toast({
-          title: "הפרטים נשלחו בהצלחה!",
-          description: "ניצור איתך קשר בהקדם",
-          className: "bg-success text-white border-success",
-        });
-        reset();
+        router.push("/thank-you");
       } else {
         throw new Error(result.error || "שגיאה בשליחת הטופס");
       }
