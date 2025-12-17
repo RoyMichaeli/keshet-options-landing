@@ -21,7 +21,6 @@ export function LeadForm() {
   const {
     register,
     handleSubmit,
-    reset,
     setValue,
     watch,
     formState: { errors },
