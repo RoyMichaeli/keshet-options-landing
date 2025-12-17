@@ -2,22 +2,55 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+    /* Dark mode only - Custom design tokens */
+    --background: 214 60% 10%; /* #0A1628 */
+    --foreground: 210 40% 98%; /* #F8FAFC */
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+    --card: 220 39% 11%; /* #111827 */
+    --card-foreground: 210 40% 98%; /* #F8FAFC */
+
+    --popover: 220 39% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 212 68% 15%; /* #0A2540 */
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 215 28% 17%; /* #1E293B */
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 215 16% 47%; /* #6B7280 */
+    --muted-foreground: 215 20% 65%; /* #94A3B8 */
+
+    --accent: 42 61% 58%; /* #D4A853 gold */
+    --accent-foreground: 214 60% 10%;
+
+    --destructive: 0 84% 60%; /* #EF4444 */
+    --destructive-foreground: 210 40% 98%;
+
+    --success: 142 71% 45%; /* #22C55E */
+
+    --border: 217 33% 17%; /* #1E293B */
+    --input: 217 33% 17%;
+    --ring: 42 61% 58%; /* gold */
+
+    --teal: 187 77% 53%; /* #2BC0E4 */
+
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
 }
 
 @layer utilities {
