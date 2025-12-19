@@ -40,28 +40,29 @@ export function About() {
         </div>
 
         {/* Course Highlights Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           {courseHighlights.map((item, index) => (
-            <Card
-              key={index}
-              className="bg-card border border-border hover:border-accent/50 transition-colors rounded-xl"
-            >
-              <CardContent className="p-6 flex gap-4">
-                <div className="flex-shrink-0">
-                  <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">
-                    <item.icon className="w-6 h-6 text-accent" />
+            <div key={index} className="relative">
+              {/* Glow effect */}
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-accent/20 via-teal/20 to-accent/20 rounded-xl blur-md" />
+              <Card className="relative bg-gradient-to-br from-card via-card to-secondary border border-accent/30 rounded-xl shadow-lg shadow-accent/5 h-full">
+                <CardContent className="p-6 flex gap-4">
+                  <div className="flex-shrink-0">
+                    <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">
+                      <item.icon className="w-6 h-6 text-accent" />
+                    </div>
                   </div>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-foreground mb-1">
-                    {item.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
-                    {item.description}
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
+                  <div>
+                    <h3 className="text-lg font-semibold text-foreground mb-1">
+                      {item.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
           ))}
         </div>
 
