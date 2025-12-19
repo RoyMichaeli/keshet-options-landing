@@ -10,10 +10,33 @@ const heebo = Heebo({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://options.keshet.finance"),
   title: "Keshet.finance | קורס מסחר באופציות",
   description: "קורס מעשי וממוקד למסחר באופציות בשוק ההון",
   icons: {
     icon: "/favicon.png",
+  },
+  openGraph: {
+    title: "Keshet.finance | קורס מסחר באופציות",
+    description: "קורס מעשי וממוקד למסחר באופציות בשוק ההון",
+    url: "https://options.keshet.finance",
+    siteName: "Keshet.finance",
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Keshet.finance Course Preview",
+      },
+    ],
+    locale: "he_IL",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Keshet.finance | קורס מסחר באופציות",
+    description: "קורס מעשי וממוקד למסחר באופציות בשוק ההון",
+    images: ["/og.png"],
   },
 };
 
