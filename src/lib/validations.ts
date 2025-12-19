@@ -6,7 +6,8 @@ export const leadFormSchema = z.object({
     .string()
     .regex(/^05\d[-]?\d{7}$/, { message: "מספר טלפון לא תקין" }),
   email: z.string().email({ message: "כתובת אימייל לא תקינה" }),
-  consent: z.literal(true, { message: "יש לאשר את תנאי השימוש" }),
+  consent: z.literal(true, { message: "יש לאשר קבלת מידע" }),
+  termsConsent: z.literal(true, { message: "יש לאשר את התקנון" }),
   website: z.string().max(0).optional(),
 });
 

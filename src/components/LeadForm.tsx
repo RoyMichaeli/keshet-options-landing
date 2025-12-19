@@ -10,6 +10,13 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import { useToast } from "@/hooks/use-toast";
 import { leadFormSchema, type LeadFormData } from "@/lib/validations";
 
@@ -31,11 +38,13 @@ export function LeadForm() {
       phone: "",
       email: "",
       consent: undefined,
+      termsConsent: undefined,
       website: "",
     },
   });
 
   const consentValue = watch("consent");
+  const termsConsentValue = watch("termsConsent");
 
   const onSubmit = async (data: LeadFormData) => {
     setIsSubmitting(true);
@@ -166,6 +175,54 @@ export function LeadForm() {
               </div>
               {errors.consent && (
                 <p className="text-sm text-destructive">{errors.consent.message}</p>
+              )}
+
+              {/* Terms Consent Checkbox */}
+              <div className="flex items-start gap-3">
+                <Checkbox
+                  id="termsConsent"
+                  checked={termsConsentValue === true}
+                  onCheckedChange={(checked) => {
+                    setValue("termsConsent", checked === true ? true : undefined as unknown as true);
+                  }}
+                  className="mt-1 border-accent/50 bg-card data-[state=checked]:bg-accent data-[state=checked]:border-accent"
+                />
+                <Label
+                  htmlFor="termsConsent"
+                  className="text-sm text-muted-foreground leading-relaxed cursor-pointer"
+                >
+                  אני מאשר/ת שקראתי היטב את{" "}
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <button
+                        type="button"
+                        className="text-accent hover:underline font-medium"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        התקנון
+                      </button>
+                    </DialogTrigger>
+                    <DialogContent className="max-h-[80vh] overflow-y-auto bg-card border-accent/30">
+                      <DialogHeader>
+                        <DialogTitle className="text-xl text-accent text-center">
+                          תקנון ותנאי השתתפות בקורס
+                        </DialogTitle>
+                      </DialogHeader>
+                      <div className="space-y-4 text-sm text-muted-foreground leading-relaxed pr-2">
+                        <p>1. הקורס נועד למטרות לימוד והעשרה בלבד. אין לראות בתכניו המלצה, ייעוץ או חוות דעת מקצועית מכל סוג שהוא.</p>
+                        <p>2. המשתתף מודע לכך שכל פעולה פיננסית הינה באחריותו הבלעדית.</p>
+                        <p>3. חל איסור מוחלט לצלם, להקליט, להסריט, לשכפל, להפיץ או לעשות כל שימוש בתכני הקורס, לרבות שיעורי זום מוקלטים ושאינם מוקלטים, ללא אישור בכתב ממפעיל הקורס.</p>
+                        <p>4. זכויות היוצרים בתכני הקורס שמורות במלואן למפעיל הקורס.</p>
+                        <p>5. לאחר השתתפות בשיעור הראשון, לא יינתן החזר כספי מכל סיבה שהיא.</p>
+                        <p>6. ההשתתפות בקורס מהווה הסכמה מלאה לתנאים אלו.</p>
+                      </div>
+                    </DialogContent>
+                  </Dialog>
+                  {" "}והסכמתי לתנאים
+                </Label>
+              </div>
+              {errors.termsConsent && (
+                <p className="text-sm text-destructive">{errors.termsConsent.message}</p>
               )}
 
               {/* Submit Button */}
