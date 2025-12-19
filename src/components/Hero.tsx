@@ -19,14 +19,14 @@ export function Hero() {
       </div>
 
       {/* Desktop Image */}
-      <div className="hidden md:flex">
-        <div className="relative w-full aspect-[16/9]">
+      <div className="hidden md:flex justify-center bg-[#0a1628]">
+        <div className="relative w-full max-w-[1400px] aspect-[16/8.2]">
           <Image
             src="/images/hero-desktop.png"
             alt="קורס מסחר באופציות"
             fill
             priority
-            sizes="100vw"
+            sizes="(max-width: 1400px) 100vw, 1400px"
             className="object-cover scale-[1.01]"
           />
         </div>
