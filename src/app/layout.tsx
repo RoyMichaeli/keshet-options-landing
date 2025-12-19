@@ -12,6 +12,9 @@ const heebo = Heebo({
 export const metadata: Metadata = {
   title: "Keshet.finance | קורס מסחר באופציות",
   description: "קורס מעשי וממוקד למסחר באופציות בשוק ההון",
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({

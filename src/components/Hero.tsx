@@ -3,7 +3,7 @@ import Image from "next/image";
 export function Hero() {
 
   return (
-    <section className="w-full bg-[#0a1628] overflow-hidden">
+    <section className="w-full bg-background overflow-hidden">
       {/* Mobile Image */}
       <div className="flex md:hidden">
         <div className="relative w-full aspect-[17.5/20]">
@@ -19,7 +19,7 @@ export function Hero() {
       </div>
 
       {/* Desktop Image */}
-      <div className="hidden md:flex justify-center bg-[#0a1628]">
+      <div className="hidden md:flex justify-center bg-background">
         <div className="relative w-full max-w-[1400px] aspect-[16/8.2]">
           <Image
             src="/images/hero-desktop.png"
