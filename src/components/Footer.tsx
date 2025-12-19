@@ -3,7 +3,7 @@ export function Footer() {
     <footer className="py-8 px-4 bg-[#050A12] border-t border-border">
       <div className="container mx-auto text-center">
         <p className="text-sm text-muted-foreground">
-          כל הזכויות שמורות Keshet.Finance
+          כל הזכויות שמורות ל- Keshet.Finance
         </p>
       </div>
     </footer>
