@@ -1,32 +1,35 @@
 import Image from "next/image";
 
 export function Hero() {
+
   return (
     <section className="w-full bg-background overflow-hidden">
       {/* Mobile Image */}
-      <div className="md:hidden">
-        <Image
-          src="/images/hero-mobile.png"
-          alt="קורס מסחר באופציות"
-          width={1080}
-          height={603}
-          priority
-          sizes="100vw"
-          className="w-full h-auto"
-        />
+      <div className="flex md:hidden">
+        <div className="relative w-full aspect-[17.5/20]">
+          <Image
+            src="/images/hero-mobile.png"
+            alt="קורס מסחר באופציות"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-bottom"
+          />
+        </div>
       </div>
 
       {/* Desktop Image */}
-      <div className="hidden md:block bg-background">
-        <Image
-          src="/images/hero-desktop.png"
-          alt="קורס מסחר באופציות"
-          width={1672}
-          height={934}
-          priority
-          sizes="(max-width: 1400px) 100vw, 1400px"
-          className="w-full h-auto max-w-[1400px] mx-auto"
-        />
+      <div className="hidden md:flex justify-center bg-background">
+        <div className="relative w-full max-w-[1400px] aspect-[16/8.2]">
+          <Image
+            src="/images/hero-desktop.png"
+            alt="קורס מסחר באופציות"
+            fill
+            priority
+            sizes="(max-width: 1400px) 100vw, 1400px"
+            className="object-cover scale-[1.01]"
+          />
+        </div>
       </div>
     </section>
   );
