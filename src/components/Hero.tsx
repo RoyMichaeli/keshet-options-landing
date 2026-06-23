@@ -5,7 +5,7 @@ export function Hero() {
   return (
     <section className="w-full bg-background overflow-hidden">
       {/* Mobile Image */}
-      <div className="flex md:hidden">
+      <div className="md:hidden">
         <div className="relative w-full aspect-[16/9]">
           <Image
             src="/images/hero-mobile.png"
@@ -19,8 +19,8 @@ export function Hero() {
       </div>
 
       {/* Desktop Image */}
-      <div className="hidden md:flex justify-center bg-background">
-        <div className="relative w-full max-w-[1400px] aspect-[16/9]">
+      <div className="hidden md:block bg-background">
+        <div className="relative w-full max-w-[1400px] aspect-[16/9] mx-auto">
           <Image
             src="/images/hero-desktop.png"
             alt="קורס מסחר באופציות"
