@@ -34,3 +34,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local image backups (not for production)
+public/images/backup/
+public/favicon 2.png
