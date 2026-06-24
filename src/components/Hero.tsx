@@ -6,14 +6,14 @@ export function Hero() {
     <section className="w-full bg-background overflow-hidden">
       {/* Mobile Image */}
       <div className="flex md:hidden">
-        <div className="relative w-full aspect-[17.5/20]">
+        <div className="relative w-full aspect-video">
           <Image
             src="/images/hero-mobile.png"
             alt="קורס מסחר באופציות"
             fill
             priority
             sizes="100vw"
-            className="object-cover object-bottom"
+            className="object-cover"
           />
         </div>
       </div>

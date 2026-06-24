@@ -5,7 +5,7 @@ const courseHighlights = [
   {
     icon: BookOpen,
     title: "6 שיעורים מעמיקים בתחום האופציות",
-    description: "בהנחיית קשת בן זאב, מרצה למימון ומנהל תיקים",
+    description: "בהנחיית סוחר אופציות מקצועי בבית השקעות",
   },
   {
     icon: Users,
@@ -27,7 +27,7 @@ const courseHighlights = [
 
 export function About() {
   return (
-    <section className="-mt-64 pt-8 pb-16 md:mt-0 md:pt-12 md:pb-4 px-4 relative z-10 bg-background">
+    <section className="pt-8 pb-16 md:pt-12 md:pb-4 px-4 relative z-10 bg-background">
       <div className="container mx-auto max-w-5xl">
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16">
