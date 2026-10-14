@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Loader2 } from "lucide-react";
+import { CalendarDays, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -84,6 +84,12 @@ export function LeadForm() {
           <div className="absolute -inset-1 bg-gradient-to-r from-accent/20 via-teal/20 to-accent/20 rounded-2xl blur-lg" />
           <Card className="relative bg-gradient-to-br from-card via-card to-secondary border border-accent/30 rounded-2xl shadow-xl shadow-accent/5">
             <CardHeader className="pb-4">
+              <div className="flex justify-center mb-2">
+                <span className="inline-flex items-center gap-2 rounded-full bg-accent/10 border border-accent/30 px-3 py-1 text-sm font-medium text-accent">
+                  <CalendarDays className="w-4 h-4" />
+                  המחזור נפתח בסוף דצמבר
+                </span>
+              </div>
               <CardTitle className="text-2xl md:text-3xl font-bold text-center bg-gradient-to-r from-accent to-amber-400 bg-clip-text text-transparent">
                 שריון מקום
               </CardTitle>

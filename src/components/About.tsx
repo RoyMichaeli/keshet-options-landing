@@ -99,6 +99,10 @@ export function About() {
                 <ul className="text-sm text-muted-foreground space-y-2">
                   <li className="flex items-center justify-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-accent/60" />
+                    המחזור נפתח בסוף דצמבר
+                  </li>
+                  <li className="flex items-center justify-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-accent/60" />
                     הקורס מתבצע באופן מקוון
                   </li>
                   <li className="flex items-center justify-center gap-2">
