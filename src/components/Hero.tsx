@@ -8,7 +8,7 @@ export function Hero() {
       <div className="flex md:hidden">
         <div className="relative w-full aspect-video">
           <Image
-            src="/images/hero-mobile.png"
+            src="/images/hero-mobile-v2.png"
             alt="קורס מסחר באופציות"
             fill
             priority
@@ -22,7 +22,7 @@ export function Hero() {
       <div className="hidden md:flex justify-center bg-background">
         <div className="relative w-full max-w-[1400px] aspect-[16/8.2]">
           <Image
-            src="/images/hero-desktop.png"
+            src="/images/hero-desktop-v2.png"
             alt="קורס מסחר באופציות"
             fill
             priority

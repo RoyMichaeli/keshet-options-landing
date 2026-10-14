@@ -1,16 +1,22 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { BookOpen, Users, Briefcase, TrendingUp } from "lucide-react";
+import { BookOpen, Users, Briefcase, TrendingUp, MessageCircle } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const courseHighlights = [
   {
     icon: BookOpen,
-    title: "6 שיעורים מעמיקים בתחום האופציות",
-    description: "בהנחיית סוחר אופציות מקצועי בבית השקעות",
+    title: "שני שיעורי לייב",
+    description: "בהנחיית קשת פיננס, מנהל תיקי השקעות וסוחר עם 8 שנות ניסיון",
   },
   {
     icon: Users,
-    title: "3 סדנאות LIVE",
-    description: "עם סוחר אופציות מקצועי על מערכות מסחר אמיתיות",
+    title: "חמישה שיעורי לייב",
+    description: "עם סוחר אופציות מקצועי בבית השקעות",
+  },
+  {
+    icon: MessageCircle,
+    title: "קבוצת WhatsApp",
+    description: "עם שני המרצים לשאלות ולקבלת הקלטות הקורס",
   },
   {
     icon: TrendingUp,
@@ -42,7 +48,16 @@ export function About() {
         {/* Course Highlights Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           {courseHighlights.map((item, index) => (
-            <div key={index} className="relative">
+            <div
+              key={index}
+              className={cn(
+                "relative",
+                // Odd card count: center the last card under the two columns
+                courseHighlights.length % 2 === 1 &&
+                  index === courseHighlights.length - 1 &&
+                  "md:col-span-2 md:justify-self-center md:w-[calc(50%-1rem)]"
+              )}
+            >
               {/* Glow effect */}
               <div className="absolute -inset-0.5 bg-gradient-to-r from-accent/20 via-teal/20 to-accent/20 rounded-xl blur-md" />
               <Card className="relative bg-gradient-to-br from-card via-card to-secondary border border-accent/30 rounded-xl shadow-lg shadow-accent/5 h-full">
